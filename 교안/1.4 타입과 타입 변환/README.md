@@ -347,3 +347,48 @@ while ((pos = input.find(delimiter)) != string::npos)
 	input.erase(0, pos + delimiter.length());
 ```
 
+---
+
+#### 범위 기반 for 루프
+
+> C++11부터 범위기반 for 루프가 추가되어서 이를 사용할 수 있다.
+
+```C++
+for (range_declaration : range_expression )
+    loop_statement
+```
+
+- 다음 코드처럼 vector 내의 있는 요소들을 쉽게 순회할 수 있다.
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    vector<int> a = {1, 2, 3};
+    for(int b : a) cout << b << "\n";
+    for(int i = 0; i < a.size(); i++) cout << a[i] << "\n";
+    return 0;
+}
+```
+
+
+
+##### atoi(s.c_str())
+
+> 문자열을 int로 바꿔야 할 상황일 때 문자열, string으로 입력 받아 입력받은 글자가 문자열인지 숫자인지 확인하는 로직
+
+- 문자열 s를 기반으로 `atoi(s.c_str())`로 사용
+- 입력받은 문자열이 문자라면 0을 반환하고 아니라면 숫자를 반환
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    string s = "1";
+    string s2 = "amumum";
+    cout << atoi(s.c_str()) << '\n';
+    cout << atoi(s2.c_str()) << '\n';
+    return 0;
+}
+```
+
